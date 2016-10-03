@@ -96,9 +96,17 @@ textarea {
    ========================================================================== */
 
 
+.main {
+    font-family: "Consolas", Helvetica, monospace;
+    padding-top: 100px;
+    text-align: center;
+    line-height: 40px;
 
+}
 
-
+.small {
+    width: 100px;
+}
 
 
 
