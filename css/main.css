@@ -25,12 +25,12 @@ html {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #eee;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #eee;
     text-shadow: none;
 }
 
@@ -95,10 +95,17 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+h1 {
+    font-weight: 100;
+    font-size: 3em;
+}
 
+strong {
+    font-weight: 400;
+}
 .main {
-    font-family: "Consolas", Helvetica, monospace;
-    padding-top: 100px;
+    font-family: "Lekton", "Consolas", Helvetica, monospace;
+    padding-top: 80px;
     text-align: center;
     line-height: 40px;
 
@@ -106,10 +113,61 @@ textarea {
 
 .small {
     width: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
+a, a:visited {
+    display: inline-block;
+    border-bottom: 10px solid transparent;
+    color: #222;
+    height: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+}
+a:hover {
+    border-color: #ffe70f;
+}
 
+.spin {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 8000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 8000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 8000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    
+    animation-name: spin;
+    animation-duration: 8000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
 
 
 
