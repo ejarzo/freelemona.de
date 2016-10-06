@@ -15,21 +15,28 @@ $(document).ready(function(){
                 "top": "100vh",
                 "opacity": 0
             }, 200);
+            $(".section:visible").addClass("visuallyhidden");
 
-            $(".spin").animate({"width": "280px",}, 200, function() {
+            $(".spin").animate({
+                "width": "280px"
+                /*"left": 0,
+                "right": 0*/
+            }, 200, function() {
                 $(".menu").fadeIn(200);
             });
             
 
         } else {
-            $(hash).show();
+            $(hash).removeClass("visuallyhidden");
 
             $(".spin").animate({
-                "width": "50px",
+                "width": "50px"
+                /*"left": 0,
+                "right": "80%"*/
             }, 200);
             //$(hash).fadeIn(800);
             $(hash).animate({
-                "top": "100px",
+                "top": "120px",
                 "opacity": 1
             }, 200);
 
