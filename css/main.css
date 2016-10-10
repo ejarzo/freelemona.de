@@ -95,13 +95,13 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-html {
-    color: #222;
-}
+body {
+    overflow-x: hidden;
 
+}
 h1 {
     margin: 0;
-    margin-top: 270px;
+    margin-top: 230px;
     font-weight: 100;
     font-size: 3em;
 }
@@ -132,12 +132,15 @@ strong {
    /* overflow: hidden;*/
 }
 
+.bandcampemb {
+    background-color: #ddd;
+}
 
 .small {
     width: 280px;
     margin-bottom: 40px;
     position: absolute;
-    top: 60px;
+    top: 40px;
     left: 0;
     right: 0;
     margin: auto;
@@ -146,11 +149,19 @@ strong {
 .tiny {
     width: 50px;
 }
+.back-button:hover {
+    color: #ffe70f !important;
+}
 .back-button {
-    font-size: 40px;
+    color: #aaa !important;
+    font-size: 20px;
 }
 .section {
-    
+    text-align: left;
+
+}
+
+.section-main {
     opacity: 0;
     position: absolute;
     background-color: #fff;
@@ -178,8 +189,9 @@ strong {
 .tabs li {
     display: inline-block;
 }
-a {
+a, a:visited {
     text-decoration: none !important;
+    color: #222;
 }
 a.inline, a.inline:visited {
    /* display: inline-block;*/
@@ -206,15 +218,23 @@ button {
     border: none;
 }
 
+.next-release:hover {
+    color: #222;
+}
 .next-release {
+    padding-top: 2px;
+    padding-left: 3px;
     display: inline;
     color: #222;
     background-color: #ddd;
+    margin-left: 10px;
 }
 .next-release:hover {
     background-color: #ffe70f;
 }
 .right-align {
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
     text-align-last: right;
 }
 nav a, nav a:visited {
@@ -231,7 +251,57 @@ a.yellow:hover {
     border-color: #ffe70f;
 }
 
+.home {
+    color: #AAA;
 
+    position: relative;
+    top: -5px;
+    font-size: 18px;
+}
+.tabs {
+    padding:0;
+}
+
+.release-section {
+    opacity: 0;
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+    top: 120px;
+    bottom: 0;
+    padding: 100px;
+    padding-top: 60px;
+    z-index: 100;
+
+    left: 0;
+    width: 100vw;
+    padding: 100px;
+    padding-top: 10px;
+}
+#releases_hash {
+    width: 100vw;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#releases_hash .row {
+    position: relative;
+}
+.release2 {
+    position: absolute;
+    left: 100vw;
+    top: 0;
+}
+
+.col-half {
+    width: 50%;
+    position: relative;
+    top: 0;
+    vertical-align: top;
+    display: inline-block;
+    padding: 0 10px 0 10px;
+}
 .spin {
     z-index: 2000;
     -webkit-animation-name: spin;

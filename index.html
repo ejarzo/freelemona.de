@@ -22,14 +22,17 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="main">
-            <a href="#" class="back-button"><img src="img/fl_icon_white_back.svg" class="spin small"></a>
+            <a href="#" class="back-button" title="Home">
+                <img src="img/fl_icon_white_back.svg" class="spin small"> ^
+            <!-- <span class="home">^</span> -->
+            </a>
                 <!-- <img src="img/fl_icon_white_back.svg" class="spin small"> <br> -->
             <div class="menu">
         
                 <h1>Do you want <strong>Free Lemonade</strong>?</h1><br>
                 <nav>
                     <ul class="tabs">
-                        <li class="nav-link"><a class="yellow" id="releases_link" href="#releases">Releases</a> - </li>
+                        <li class="nav-link"><a class="yellow" id="releases_link" href="#release1">Releases</a> - </li>
                         <li class="nav-link"><a class="yellow" id="artists_link" href="#artists">Artists</a> - </li>
                         <li class="nav-link"><a class="yellow" id="info_link" href="#info">Info</a> - </li>
                         <li class="nav-link"><a class="yellow" id="videos_link" href="#videos">Videos</a> - </li>
@@ -37,37 +40,92 @@
                     </ul>
                 </nav>
             </div>
-            <div id="releases_hash" class="section visuallyhidden">
-                <div class="row">
-                    <div class="col-md-6">
-                        <iframe style="border: 0; width: 350px; height: 786px;" src="https://bandcamp.com/EmbeddedPlayer/album=3284895478/size=large/bgcol=ffffff/linkcol=333333/transparent=true/" seamless><a href="http://freelemonade.bandcamp.com/album/tabernacle">Tabernacle by Shunner</a></iframe>
-                    </div>
-                    <div class="col-md-6">
+           <!--  <div id="releases_hash" class="section visuallyhidden"> -->
+                <!-- <div class="row"> -->
+
+                <div id="release1_hash" class="visuallyhidden section release-section">
+                    <div class="col-half">
+                        <iframe class="bandcampemb bandcamp1" style="border: 0; width: 350px; height: 786px;" src="https://bandcamp.com/EmbeddedPlayer/album=3284895478/size=large/bgcol=ffffff/linkcol=333333/transparent=true/" seamless><a href="http://freelemonade.bandcamp.com/album/tabernacle">Tabernacle by Shunner</a></iframe>
+                    </div><!-- 
+                     --><div class="col-half">
                         <h2>Our Latest Release is Tabernacle by <a class="inline yellow" href="https://twitter.com/emerstophanes" target="blank">Shunner</a></h2>
                         <p>
                             listen to it.
                         </p>
                         <p class="right-align">
-                            <button class="next-release">
+                            <a class="next-release next1" href="#release2">
                                 Next Release > 
-                            </button><br><a class="inline yellow" href="https://freelemonade.bandcamp.com" target="blank">View our entire catalog</a>
+                            </a><br>
+                            <a class="inline yellow" href="https://freelemonade.bandcamp.com" target="blank">View our entire catalog</a>
                         </p>
                     </div>
                 </div>
-              
+
+                <div id="release2_hash" class="visuallyhidden section release-section">
+                    <div class="col-half">
+                        <iframe class="bandcampemb bandcamp2" style="border: 0; width: 350px; height: 442px;" src="https://bandcamp.com/EmbeddedPlayer/track=3255990293/size=large/bgcol=ffffff/linkcol=333333/tracklist=false/transparent=true/" seamless><a href="http://freelemonade.bandcamp.com/track/kicker-2">Kicker by JARZ0</a></iframe>
+                    </div><!-- 
+                     --><div class="col-half">
+                        <h2>Kicker by <a class="inline yellow" href="https://soundcloud.com/jarz0" target="blank">JARZ0</a></h2>
+                        <p>
+                            Wow check out this amazing track.
+                        </p>
+                        <p class="right-align">
+                            <a class="next-release next1" href="#release1"> < </a>
+                            <a class="next-release next2" href="#release3">
+                                Next Release > 
+                            </a><br>
+                            <a class="inline yellow" href="https://freelemonade.bandcamp.com" target="blank">View our entire catalog</a>
+                        </p>
+                    </div>
+                </div>
+              <!--   </div>
+               -->
                 
 
-            </div>
-            <div id="artists_hash" class="section visuallyhidden">
+           <!--  </div> -->
+            
+
+            <div id="artists_hash" class="section section-main visuallyhidden">
                 <h2>ARTISTS</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
             </div>
-            <div id="info_hash" class="section visuallyhidden">
+
+
+            <div id="info_hash" class="section section-main visuallyhidden">
                 <h2>INFO</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
             </div>
-            <div id="videos_hash" class="section visuallyhidden">
+            
+
+            <div id="videos_hash" class="section section-main visuallyhidden">
                 <h2>VIDEOS</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
             </div>
-            <div id="contact_hash" class="section visuallyhidden">
+            
+
+            <div id="contact_hash" class="section section-main visuallyhidden">
                 <div class="col-md-6">
                     <h2>Let us know what you think</h2>
                 </div>

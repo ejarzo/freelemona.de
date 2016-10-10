@@ -1,76 +1,113 @@
 var last_tab;
+function reset_bandcampemb(div) {
+    $(div).each(function(i,t){
+        var src_back = t.src;
+        t.src = "random_blank.html";
+        t.src = src_back;
+    });
+}
 $(document).ready(function(){
+
     $(window).hashchange( function(){
         var hash = location.hash + "_hash"
-        var active_link = location.hash + "_link";        
-        $(active_link).addClass("active-tab");
-        if (last_tab) {
-            $(last_tab).removeClass("active-tab");
-        };
-        last_tab = active_link
-        
+
         if (location.hash == "") {
-                //console.log(last_tab);
-            $(".section:visible").animate({
+            var section = $('.section');
+
+            console.log(section);
+            console.log(last_tab);
+
+            if (last_tab === "#release1_hash" ||
+                last_tab === "#release2_hash" ||
+                last_tab === "#release3_hash") {
+                reset_bandcampemb(".bandcampemb");
+            }
+
+            section.animate({
                 "top": "100vh",
                 "opacity": 0
-            }, 200);
-            $(".section:visible").addClass("visuallyhidden");
+            }, 200, function(){
+                section.addClass("visuallyhidden");                
+            });
 
             $(".spin").animate({
                 "width": "280px"
-                /*"left": 0,
-                "right": 0*/
             }, 200, function() {
-                $(".menu").fadeIn(200);
+                $(".menu").fadeIn(200, function (){
+                   $("#release1_hash").css({
+                        "left": 0,
+                        "opacity": 0
+                    })
+                    $("#release2_hash").css({
+                        "left": "100vw",
+                        "opacity": 0
+                    })
+                });
             });
-            
 
-        } else {
+        } 
+        else {
+
+            if (location.hash === "#release2") {
+
+                $("#release1_hash").animate({
+                    "left": "-100vw",
+                    "opacity": 0
+                }, 300)
+                $("#release2_hash").animate({
+                    "left": "0vw",
+                    "opacity": 1
+                }, 300, function(){
+                    reset_bandcampemb(".bandcamp1");
+                    $("#release1").addClass("visuallyhidden");
+                });
+            }
+
+            else if (location.hash === "#release1") {
+                
+                if (last_tab === "#release2_hash") {
+                    console.log("asdasds");
+                    $("#release1_hash").animate({
+                        "left": 0,
+                        "opacity": 1
+                    }, 300)
+                }
+
+                $("#release2_hash").animate({
+                    "left": "100vw",
+                    "opacity": 0
+                }, 300, function(){
+                    reset_bandcampemb(".bandcamp2");
+                    $("#release2").addClass("visuallyhidden");
+                })
+
+                $("#release2_hash").animate({
+                    "top": "120px",
+                    "opacity": 1
+                }, 200);
+                
+                $("#release1_hash").animate({
+                    "top": "120px",
+                    "opacity": 1
+                }, 200);
+
+            }
+            else {
+                $(hash).animate({
+                    "top": "120px",
+                    "opacity": 1
+                }, 200);
+            }
+
             $(hash).removeClass("visuallyhidden");
-
+            
             $(".spin").animate({
                 "width": "50px"
-                /*"left": 0,
-                "right": "80%"*/
-            }, 200);
-            //$(hash).fadeIn(800);
-            $(hash).animate({
-                "top": "120px",
-                "opacity": 1
             }, 200);
 
-            $(".menu").fadeOut(200, function(){
-               
-            });
-            /*$(".section").css({
-                "top": "100px",
-                "opacity": 1
-                });*/
+            $(".menu").fadeOut(200);
         }
-        /*if (location.hash == "") {
-            $("#content").hide();
-            $("#splash").show();
-            $("#aje").hide();
-            $("#aje-splash").show();
-            $("#enter-site").show();
-        }
-        else {
-            $("#splash").hide();
-            $("#aje-splash").hide();
-            $("#aje").show();
-            $("#content").fadeIn("", function(){
-            });
-        };*/
-
-        //$("#dynamic-content").children().hide();
-      /*  $(".main").animate({
-                "margin-top": "-500px"
-            }, 200, function(){
-                //$(hash).fadeIn(200);
-            });*/
-        
-
+        last_tab = hash;
         return false;
     })
     $(window).hashchange();
