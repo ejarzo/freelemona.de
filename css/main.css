@@ -132,8 +132,25 @@ strong {
    /* overflow: hidden;*/
 }
 
+.menu {
+    text-align: center;
+}
+
+#videos_hash {
+    text-align: center;
+}
+
+#videos_hash h2 {
+    text-align: center;
+}
+
+#videos_hash .video {
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
 .bandcampemb {
     background-color: #ddd;
+    margin-bottom: 60px;
 }
 
 .small {
@@ -157,7 +174,7 @@ strong {
     font-size: 20px;
 }
 .section {
-    text-align: left;
+  /*  text-align: left;*/
 
 }
 
@@ -170,7 +187,7 @@ strong {
     top: 120px;
     bottom: 0;
     padding: 100px;
-    padding-top: 60px;
+    padding-top: 30px;
     z-index: 100;
    /* overflow: scroll;*/
 }
@@ -291,6 +308,11 @@ a.yellow:hover {
 .release2 {
     position: absolute;
     left: 100vw;
+    top: 0;
+}
+.release3 {
+    position: absolute;
+    left: 200vw;
     top: 0;
 }
 

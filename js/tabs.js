@@ -13,7 +13,11 @@ $(document).ready(function(){
 
         if (location.hash == "") {
             var section = $('.section');
-
+            
+            $('.yt_player_iframe').each(function(){
+              this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+            });
+            
             console.log(section);
             console.log(last_tab);
 
@@ -48,17 +52,45 @@ $(document).ready(function(){
         } 
         else {
 
+            if (location.hash === "#release3") {
+                $("#release3_hash").animate({
+                    "left": 0,
+                    "opacity": 1
+                }, 300)
+                
+                $("#release1_hash").animate({
+                    "left": "-200vw",
+                    "opacity": 0
+                }, 300)
+
+                $("#release2_hash").animate({
+                    "left": "-100vw",
+                    "opacity": 1
+                }, 300, function(){
+                    reset_bandcampemb(".bandcamp2");
+                    $("#release2").addClass("visuallyhidden");
+                });
+            }
+
             if (location.hash === "#release2") {
 
                 $("#release1_hash").animate({
                     "left": "-100vw",
                     "opacity": 0
                 }, 300)
+                
+                $("#release3_hash").animate({
+                    "left": "100vw",
+                    "opacity": 0
+                }, 300)
+                
                 $("#release2_hash").animate({
                     "left": "0vw",
                     "opacity": 1
                 }, 300, function(){
                     reset_bandcampemb(".bandcamp1");
+                    reset_bandcampemb(".bandcamp3");
+
                     $("#release1").addClass("visuallyhidden");
                 });
             }
@@ -73,6 +105,7 @@ $(document).ready(function(){
                     }, 300)
                 }
 
+        
                 $("#release2_hash").animate({
                     "left": "100vw",
                     "opacity": 0
@@ -80,6 +113,11 @@ $(document).ready(function(){
                     reset_bandcampemb(".bandcamp2");
                     $("#release2").addClass("visuallyhidden");
                 })
+
+                $("#release3_hash").animate({
+                    "top": "120px",
+                    "opacity": 1
+                }, 200);
 
                 $("#release2_hash").animate({
                     "top": "120px",
